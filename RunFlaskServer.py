@@ -27,4 +27,5 @@ def lightsOFF():
     return LogAction("Lights OFF!")
  
 if __name__ == "__main__":
+    SKCntrl.SetupGPIO()
     app.run()

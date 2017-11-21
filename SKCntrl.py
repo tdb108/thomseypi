@@ -33,44 +33,40 @@ def SetupGPIO():
 	return
 
 def SwitchONSK1():
-	SetupGPIO()
-	try:
-			GPIO.output (11, True)
-			GPIO.output (15, True)
-			GPIO.output (16, True)
-			GPIO.output (13, True)
-			# let it settle, encoder requires this
-			time.sleep(0.1)	
-			# Enable the modulator
-			GPIO.output (22, True)
-			# keep enabled for a period
-			time.sleep(0.25)
-			# Disable the modulator
-			GPIO.output (22, False)
-
-	# Clean up the GPIOs for next time
-	except KeyboardInterrupt:
-		GPIO.cleanup()
+	#SetupGPIO()
+	
+	GPIO.output (11, True)
+	GPIO.output (15, True)
+	GPIO.output (16, True)
+	GPIO.output (13, True)
+	# let it settle, encoder requires this
+	time.sleep(0.1)	
+	# Enable the modulator
+	GPIO.output (22, True)
+	# keep enabled for a period
+	time.sleep(0.25)
+	# Disable the modulator
+	GPIO.output (22, False)
+	
+	#GPIO.cleanup()
 	return
 
 
 def SwitchOFFSK1():
-	SetupGPIO()
-	try:
-			GPIO.output (11, True)
-			GPIO.output (15, True)
-			GPIO.output (16, True)
-			GPIO.output (13, False)
-			# let it settle, encoder requires this
-			time.sleep(0.1)	
-			# Enable the modulator
-			GPIO.output (22, True)
-			# keep enabled for a period
-			time.sleep(0.25)
-			# Disable the modulator
-			GPIO.output (22, False)
-
-	# Clean up the GPIOs for next time
-	except KeyboardInterrupt:
-		GPIO.cleanup()
+	#SetupGPIO()
+	
+	GPIO.output (11, True)
+	GPIO.output (15, True)
+	GPIO.output (16, True)
+	GPIO.output (13, False)
+	# let it settle, encoder requires this
+	time.sleep(0.1)	
+	# Enable the modulator
+	GPIO.output (22, True)
+	# keep enabled for a period
+	time.sleep(0.25)
+	# Disable the modulator
+	GPIO.output (22, False)
+	
+	#GPIO.cleanup()
 	return
